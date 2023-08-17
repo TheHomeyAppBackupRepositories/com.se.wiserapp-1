@@ -1,12 +1,12 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.se.wiserapp",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "brandColor": "#3DCD58",
   "name": {
-    "en": "Schneider Electric"
+    "en": "Schneider Electric (deprecated)"
   },
   "description": {
     "en": "A smarter home with Schneider."
@@ -30,6 +30,10 @@
   "category": [
     "lights"
   ],
+  "platforms": [
+    "local"
+  ],
+  "support": "mailto:homey-wiser@drenso.nl",
   "permissions": [
     "homey:wireless:zigbee",
     "homey:wireless:zwave"
@@ -39,7 +43,7 @@
     "small": "/assets/images/small.png"
   },
   "author": {
-    "name": "Marcus Hermansson"
+    "name": "Schneider Electric"
   },
   "contributors": {
     "developers": [
@@ -59,13 +63,6 @@
         "email": "dTNL.Homey@gmail.com"
       }
     ]
-  },
-  "contributing": {
-    "donate": {
-      "paypal": {
-        "username": "h3rmansson"
-      }
-    }
   },
   "bugs": {
     "url": "https://github.com/Signalare/com.se.wiserapp/issues"
@@ -132,7 +129,10 @@
           },
           {
             "name": "scene",
-            "type": "autocomplete"
+            "type": "autocomplete",
+            "title": {
+              "en": "Scene"
+            }
           }
         ]
       }
@@ -162,6 +162,9 @@
           {
             "name": "direction",
             "type": "dropdown",
+            "title": {
+              "en": "Direction"
+            },
             "values": [
               {
                 "id": "0",
@@ -210,6 +213,13 @@
         "fi": "Painehimmennin",
         "en": "Push dimmer"
       },
+      "deprecated": true,
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
       "class": "light",
       "capabilities": [
         "dim",
@@ -509,6 +519,55 @@
       ]
     },
     {
+      "name": {
+        "en": "Window/Door Sensor"
+      },
+      "deprecated": true,
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "class": "sensor",
+      "capabilities": [
+        "measure_battery",
+        "alarm_battery",
+        "alarm_contact"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2450"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": "Schneider Electric",
+        "productId": [
+          "CCT591011_AS"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              1280
+            ],
+            "bindings": [
+              0,
+              1,
+              1280
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/ZB_CCT591011_AS/assets/images/small.png",
+        "large": "/drivers/ZB_CCT591011_AS/assets/images/large.png",
+        "xlarge": "/drivers/ZB_CCT591011_AS/assets/images/xlarge.png"
+      },
+      "id": "ZB_CCT591011_AS"
+    },
+    {
       "id": "ZB_NHMOTION_DIMMER_1",
       "name": {
         "no": "Bevegelsesdimmer",
@@ -516,6 +575,13 @@
         "fi": "Liikehimmennin",
         "en": "Motion dimmer"
       },
+      "deprecated": true,
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
       "class": "light",
       "capabilities": [
         "measure_luminance",
@@ -860,6 +926,13 @@
         "fi": "Liikekytkin",
         "en": "Motion switch"
       },
+      "deprecated": true,
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
       "class": "light",
       "capabilities": [
         "measure_luminance",
@@ -1065,6 +1138,13 @@
         "fi": "Kytkimet",
         "en": "Switch"
       },
+      "deprecated": true,
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
       "class": "light",
       "capabilities": [
         "onoff"
@@ -1233,6 +1313,13 @@
         "fi": "Kierrettävä himmennin",
         "en": "Rotary dimmer"
       },
+      "deprecated": true,
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
       "class": "light",
       "capabilities": [
         "dim",
@@ -1541,6 +1628,13 @@
         "fi": "Himmennin moduuli",
         "en": "Dimmer module"
       },
+      "deprecated": true,
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
       "class": "light",
       "capabilities": [
         "dim",
@@ -1792,6 +1886,13 @@
         "fi": "Relemoduuli",
         "en": "Switch module"
       },
+      "deprecated": true,
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
       "class": "light",
       "capabilities": [
         "onoff"
@@ -1900,6 +2001,13 @@
         "sv": "Smart plugg",
         "fi": "Älykäs pistoke"
       },
+      "deprecated": true,
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
       "class": "socket",
       "capabilities": [
         "measure_power",
@@ -1952,6 +2060,13 @@
         "sv": "1-vägsuttag",
         "fi": "Yksiosainen pistorasia"
       },
+      "deprecated": true,
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
       "class": "socket",
       "capabilities": [
         "measure_power",
@@ -2065,6 +2180,13 @@
         "sv": "2-vägsuttag",
         "fi": "Kaksiosainen pistorasia"
       },
+      "deprecated": true,
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
       "class": "socket",
       "capabilities": [
         "measure_power",
@@ -2179,6 +2301,12 @@
         "en": "Radio Sensor Cover for dimmer inserts (MTN50x6xx)",
         "nl": "Tastsensor inzetplaat voor inbouw dimmers (MTN50x6xx)"
       },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zwave"
+      ],
       "class": "light",
       "capabilities": [
         "dim",
